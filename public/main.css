@@ -1,12 +1,26 @@
-img {
-    width: 250px;
-    height: 250px;
-}
-
 i.icon {
     font-size: 2.0em;
+    cursor: pointer;
 }
 
 .container.main {
     margin-top: 7.0em;
+}
+
+.copy {
+    text-align: center;
+}
+
+i {
+    cursor: pointer;
+}
+
+.instagram {
+    color: #e4405f
+}
+
+.instagra:hover {
+    color: #e4405f;
+    background-color: #fff;
+    border-radius: 20px;
 }
