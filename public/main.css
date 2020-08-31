@@ -1,35 +1,28 @@
-i.icon {
-<<<<<<< HEAD
-    font-size: 2em;
-=======
-    font-size: 2.0em;
+    i.icon {
+    <<<<<<< HEAD font-size: 2em;
+    =======font-size: 2.0em;
     cursor: pointer;
->>>>>>> master
+    >>>>>>>master
 }
 
 .container.main {
     margin-top: 7.0em;
 }
 
-<<<<<<< HEAD
-#delete {
+<<<<<<< HEAD #delete {
     display: inline;
-=======
-.copy {
-    text-align: center;
-}
-
-i {
-    cursor: pointer;
-}
-
-.instagram {
-    color: #e4405f
-}
-
-.instagra:hover {
-    color: #e4405f;
-    background-color: #fff;
-    border-radius: 20px;
->>>>>>> master
-}
+    =======.copy {
+        text-align: center;
+    }
+    i {
+        cursor: pointer;
+    }
+    .instagram {
+        color: #e4405f
+    }
+    .instagram:hover {
+        color: #e4405f;
+        background-color: #fff;
+        border-radius: 20px;
+        >>>>>>>master
+    }
