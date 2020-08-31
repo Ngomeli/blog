@@ -1,6 +1,8 @@
 var express = require("express");
 var app = express();
 var bodyParser = require("body-parser"); //to include body-parser
+var methodOverride = require("method-override");
+var expressSanitizer = require("express-sanitizer");
 //To Connect to Mongoose
 const mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost:27017/blog_db', {
@@ -13,6 +15,8 @@ mongoose.connect('mongodb://localhost:27017/blog_db', {
 app.use(bodyParser.urlencoded({ extended: true })); //to tell express to use body parser
 app.set("view engine", "ejs");
 app.use(express.static("public")); //to access our custom styles
+app.use(expressSanitizer());
+app.use(methodOverride("_method"));
 // MOGOOSE/MODEL CONFIG
 var blogSchema = new mongoose.Schema({
     title: String,
@@ -78,6 +82,30 @@ app.get("/blogs/:id/edit", function(req, res) {
             res.render("edit", { blog: foundBlog });
         }
     });
+});
+// UPDATE ROUTE
+app.put("/blogs/:id", function(req, res) {
+    req.body.blog.body = req.sanitize(req.body.blog.body)
+    Blog.findByIdAndUpdate(req.params.id, req.body.blog, function(err, updatedBlog) {
+        if (err) {
+            res.redirect("/blogs");
+        } else {
+            res.redirect("/blogs/" + req.params.id);
+        }
+    });
+});
+
+// DELETE ROUTE
+app.delete("/blogs/:id", function(req, res) {
+    //destroy blog
+    Blog.findByIdAndRemove(req.params.id, function(err) {
+        if (err) {
+            res.redirect("/blogs");
+        } else {
+            res.redirect("/blogs");
+        }
+    });
+    //redirect somewhere
 });
 
 
