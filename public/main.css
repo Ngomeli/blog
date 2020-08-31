@@ -1,11 +1,35 @@
 i.icon {
+<<<<<<< HEAD
     font-size: 2em;
+=======
+    font-size: 2.0em;
+    cursor: pointer;
+>>>>>>> master
 }
 
 .container.main {
     margin-top: 7.0em;
 }
 
+<<<<<<< HEAD
 #delete {
     display: inline;
+=======
+.copy {
+    text-align: center;
+}
+
+i {
+    cursor: pointer;
+}
+
+.instagram {
+    color: #e4405f
+}
+
+.instagra:hover {
+    color: #e4405f;
+    background-color: #fff;
+    border-radius: 20px;
+>>>>>>> master
 }
